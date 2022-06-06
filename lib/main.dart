@@ -10,7 +10,7 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     final setPlatform = Theme.of(context).platform;
     final androidPlatform = (setPlatform == TargetPlatform.android);
     return (androidPlatform)
-        ? const MaterialApp(home: WelcomeScreenAndroid())
-        : const CupertinoApp(home: WelcomeScreenApple());
+        ? const MaterialApp(debugShowCheckedModeBanner: false, home: WelcomeScreenAndroid())
+        : const CupertinoApp(debugShowCheckedModeBanner: false, home: WelcomeScreenApple());
   }
 }
