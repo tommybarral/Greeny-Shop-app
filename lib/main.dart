@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:greeny_shop_app/screens/welcome_screen_android.dart';
+import 'package:greeny_shop_app/screens/welcome_screen_apple.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,11 +16,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: WelcomeScreen(),
-    );
+    final setPlatform = Theme.of(context).platform;
+    final androidPlatform = (setPlatform == TargetPlatform.android);
+    return (androidPlatform)
+        ? const MaterialApp(home: WelcomeScreenAndroid())
+        : const CupertinoApp(home: WelcomeScreenApple());
   }
 }

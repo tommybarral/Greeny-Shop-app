@@ -5,6 +5,13 @@ class WelcomeScreenApple extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Apple device'),
+      ),
+      child: Center(
+        child: Text('Apple Device'),
+      ),
+    );
   }
 }
