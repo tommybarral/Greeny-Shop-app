@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import './home_screen_apple.dart';
 
 class WelcomeScreenApple extends StatelessWidget {
   const WelcomeScreenApple({Key? key}) : super(key: key);
 
+  static const routeName = '/welcome-screen-apple';
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -59,7 +61,7 @@ class WelcomeScreenApple extends StatelessWidget {
                           ),
                           child: CupertinoButton(
                             onPressed: () {
-                              // go to Content screen.
+                              Navigator.of(context).pushNamed(HomeScreenApple.routeName);
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import './home_screen_android.dart';
 import '../constants.dart';
 
 class WelcomeScreenAndroid extends StatelessWidget {
   const WelcomeScreenAndroid({Key? key}) : super(key: key);
+
+  static const routeName = '/welcome-screen-android';
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,7 @@ class WelcomeScreenAndroid extends StatelessWidget {
                           ),
                           child: FlatButton(
                             onPressed: () {
-                              // go to Content screen.
+                              Navigator.of(context).pushNamed(HomeScreenAndroid.routeName);
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(24),
